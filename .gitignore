@@ -1,0 +1,25 @@
+# Datasets
+data/flower_photos/
+
+# Model files
+models/*.pth
+vgg_kp/
+
+# Other
+.DS_Store
+.idea/
+
+.clangd/
+.cproject
+.project
+*.iml
+*.py
+*.gz
+*.ckpt
+.settings/
+ckpt/
+
+
+# Notebooks
+.ipynb_checkpoints
+
