@@ -13,7 +13,6 @@ vgg_kp/
 .cproject
 .project
 *.iml
-*.py
 *.gz
 *.ckpt
 .settings/
