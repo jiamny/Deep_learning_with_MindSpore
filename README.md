@@ -12,7 +12,7 @@ Machine learning tutorial cases using MindSpore
 
 - NVIDIA cudnn 8.7
 
-- python3.9+
+- python3.9
 
 - ubuntu 22.04
 
@@ -21,6 +21,8 @@ Machine learning tutorial cases using MindSpore
 ## Data file
 
 [flower photos](https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz)
+
+[nlp_corpus](https://github.com/GuocaiL/nlp_corpus)
 
 
 ## Reference links
@@ -37,6 +39,8 @@ Machine learning tutorial cases using MindSpore
 - [mindspore-nlp-tutorial](https://github.com/lvyufeng/mindspore-nlp-tutorial)
 
 - [MindSpore-Courses](https://github.com/mindspore-courses)
+
+- [Modern Computer Vision with PyTorch](https://github.com/PacktPublishing/Modern-Computer-Vision-with-PyTorch)
 
 
 ## License
