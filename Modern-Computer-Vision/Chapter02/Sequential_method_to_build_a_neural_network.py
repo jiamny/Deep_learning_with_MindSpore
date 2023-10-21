@@ -4,6 +4,7 @@ from mindspore import Tensor, load_checkpoint, load_param_into_net
 import mindspore.context as context
 import mindspore.dataset as ds
 from matplotlib import pyplot as plt
+import numpy as np
 
 ms.set_seed(10)
 context.set_context(device_target="GPU")
@@ -24,7 +25,7 @@ class MyDataset:
 
 
 dataset = MyDataset(X, Y)
-dataloader = ds.GeneratorDataset(MyDataset(X, Y), column_names=["data", "label"],
+dataloader = ds.GeneratorDataset(dataset, column_names=["data", "label"],
                                  shuffle=True).batch(2, drop_remainder=False)
 
 # ---------------------------------------------------------------------------------
@@ -50,13 +51,19 @@ opt = nn.SGD(model.trainable_params(), learning_rate = 0.001)
 grad_fn = ms.value_and_grad(forward, None, opt.parameters, has_aux=False)
 
 print('-------------------------- Train -----------------------')
+iterator = dataloader.create_tuple_iterator()
 import time
 loss_history = []
 start = time.time()
 for _ in range(50):
-    (loss, _), grads = grad_fn(X, Y)
-    opt(grads)
-    loss_history.append(loss.item())
+    epoch_loss = []
+    for batch in iterator:
+        x, y = batch
+        (loss, _), grads = grad_fn(x, y)
+        opt(grads)
+        epoch_loss.append(float(loss.item()))
+    epoch_loss = np.array(epoch_loss).mean()
+    loss_history.append(epoch_loss)
 
 end = time.time()
 print('Training takes time: ', end - start)

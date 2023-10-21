@@ -6,7 +6,7 @@ Machine learning tutorial cases using MindSpore
 ## Dependency
 
 
-- MindSpore 2.1
+- MindSpore 2.2.0
 
 - NVIDIA CUDA 11.6
 

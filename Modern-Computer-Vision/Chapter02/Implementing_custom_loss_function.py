@@ -27,7 +27,7 @@ class MyDataset:
 dataset = MyDataset(X, Y)
 print("Access with dataset[0]: ", len(dataset[0]))
 
-dataloader = ds.GeneratorDataset(MyDataset(X, Y), column_names=["data", "label"],
+dataloader = ds.GeneratorDataset(dataset, column_names=["data", "label"],
                                  shuffle=True).batch(2, drop_remainder=False)
 
 # Iter the dataset and check if the data is created successful
