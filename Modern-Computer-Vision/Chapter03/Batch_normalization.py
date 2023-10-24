@@ -1,10 +1,8 @@
 
-import matplotlib.pyplot as plt
 import mindspore.dataset as ds
-from mindspore import ops
 from mindspore.dataset import vision
 from mindspore.dataset import transforms
-import mindspore.common.dtype as mstype
+
 import sys
 sys.path.insert(0, '../utils')
 from fashion_mnist import _FashionMNIST
